@@ -32,6 +32,7 @@ const Navbar = () => {
           Contact
         </Link>
 
+        {/* Desktop Seller Dashboard Button */}
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
@@ -48,20 +49,20 @@ const Navbar = () => {
 
         {user ? (
           <>
-          <UserButton>
-            <UserButton.MenuItems>
-              <UserButton.Action label="Home" labelIcon={<HomeIcon />} onClick={()=> router.push('/')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={()=> router.push('/all-products')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={()=> router.push('/cart')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={()=> router.push('/my-orders')} />
-            </UserButton.MenuItems>
-          </UserButton>
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Home" labelIcon={<HomeIcon />} onClick={() => router.push('/')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={() => router.push('/all-products')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={() => router.push('/cart')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={() => router.push('/my-orders')} />
+              </UserButton.MenuItems>
+            </UserButton>
           </>
         ) : (
           <button
@@ -74,8 +75,9 @@ const Navbar = () => {
         )}
       </ul>
 
-      {/* Mobile Menu (Inspect Mode Mein Yeh Show Hota Hai) */}
+      {/* Mobile Menu */}
       <div className="flex items-center md:hidden gap-3">
+        {/* Mobile Seller Dashboard Button */}
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
@@ -86,21 +88,20 @@ const Navbar = () => {
         )}
         {user ? (
           <>
-          <UserButton>
-            {/* Added Home and Products here for Mobile View */}
-            <UserButton.MenuItems>
-              <UserButton.Action label="Home" labelIcon={<HomeIcon />} onClick={()=> router.push('/')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={()=> router.push('/all-products')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={()=> router.push('/cart')} />
-            </UserButton.MenuItems>
-            <UserButton.MenuItems>
-              <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={()=> router.push('/my-orders')} />
-            </UserButton.MenuItems>
-          </UserButton>
+            <UserButton>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Home" labelIcon={<HomeIcon />} onClick={() => router.push('/')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Products" labelIcon={<BoxIcon />} onClick={() => router.push('/all-products')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="Cart" labelIcon={<CartIcon />} onClick={() => router.push('/cart')} />
+              </UserButton.MenuItems>
+              <UserButton.MenuItems>
+                <UserButton.Action label="My Orders" labelIcon={<BagIcon />} onClick={() => router.push('/my-orders')} />
+              </UserButton.MenuItems>
+            </UserButton>
           </>
         ) : (
           <button
