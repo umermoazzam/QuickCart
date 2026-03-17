@@ -186,7 +186,7 @@ export const productsDummyData = [
     "image": [
       "https://raw.githubusercontent.com/avinashdm/gs-images/main/quickcart/hdfi4u3fmprazpnrnaga.webp"
     ],
-    "category": "Earphone",
+    "category": "Watch",
     "date": 1738667417511,
     "__v": 0
   },
@@ -200,7 +200,7 @@ export const productsDummyData = [
     "image": [
       "https://raw.githubusercontent.com/avinashdm/gs-images/main/quickcart/dd3l13vfoartrgbvkkh5.webp"
     ],
-    "category": "Accessories",
+    "category": "Playstation",
     "date": 1738667503075,
     "__v": 0
   },

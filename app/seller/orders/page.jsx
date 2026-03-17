@@ -12,23 +12,25 @@ const Orders = () => {
 
     const { currency, getToken, user } = useAppContext();
 
-    const [orders, setOrders] = useState([]);
+    const[orders, setOrders] = useState([]);
     const [loading, setLoading] = useState(true);
 
     const fetchSellerOrders = async () => {
         try {
-            const token = await getToken()
+            const token = await getToken();
 
-            const { data } = await axios.get('/api/order/seller-orders', { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.get('/api/order/seller-orders', { headers: { Authorization: `Bearer ${token}` } });
 
             if (data.success) {
-                setOrders(data.orders)
-                setLoading(false)
+                setOrders(data.orders);
+                setLoading(false);
             } else {
-                toast.error(data.message)
+                toast.error(data.message);
+                setLoading(false);
             }
         } catch (error) {
-            toast.error(error.message)
+            toast.error(error.message);
+            setLoading(false);
         }
     }
 
@@ -53,20 +55,22 @@ const Orders = () => {
                                 />
                                 <p className="flex flex-col gap-3">
                                     <span className="font-medium">
-                                        {order.items.map((item) => item.product.name + ` x ${item.quantity}`).join(", ")}
+                                        {/* YAHAN CHANGE KIYA HAI */}
+                                        {order.items.map((item) => `${item.product?.name || "Deleted Product"} x ${item.quantity}`).join(", ")}
                                     </span>
                                     <span>Items : {order.items.length}</span>
                                 </p>
                             </div>
                             <div>
                                 <p>
-                                    <span className="font-medium">{order.address.fullName}</span>
+                                    {/* ADDRESS MEIN BHI OPTIONAL CHAINING LAGAYI HAI TA KE CRASH NA HO */}
+                                    <span className="font-medium">{order.address?.fullName || "N/A"}</span>
                                     <br />
-                                    <span >{order.address.area}</span>
+                                    <span >{order.address?.area || "N/A"}</span>
                                     <br />
-                                    <span>{`${order.address.city}, ${order.address.state}`}</span>
+                                    <span>{`${order.address?.city || ""}, ${order.address?.state || ""}`}</span>
                                     <br />
-                                    <span>{order.address.phoneNumber}</span>
+                                    <span>{order.address?.phoneNumber || "N/A"}</span>
                                 </p>
                             </div>
                             <p className="font-medium my-auto">{currency}{order.amount}</p>
