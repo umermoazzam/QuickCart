@@ -36,7 +36,7 @@ const Navbar = () => {
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
-            className="text-xs border px-4 py-1.5 rounded-full"
+            className="text-xs border px-4 py-1.5"
           >
             Seller Dashboard
           </button>

@@ -131,6 +131,7 @@ const AddProduct = () => {
               <option value="Smartphone">Smartphone</option>
               <option value="Laptop">Laptop</option>
               <option value="Camera">Camera</option>
+              <option value="Playstation">Playstation</option>
               <option value="Accessories">Accessories</option>
             </select>
           </div>
