@@ -12,12 +12,8 @@
       -webkit-appearance: none;
       margin: 0;
     }
-}
+  }
 
 ::-webkit-scrollbar {
-    display: none;
-}
-
-nextjs-portal {
-    display: none !important;
+  display: none;
 }
